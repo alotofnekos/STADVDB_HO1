@@ -1,0 +1,86 @@
+/*These are the schematext used for the CSVReader for each respective Job */
+.------------.
+|  goMethod  |
+'------------'
+{
+ "namespace": "nifi",
+ "name": "machine",
+ "type": "record",
+ "fields": [
+  {"name": "OrderMethodCode","type": "int"},
+  {"name": "OrderMethodType","type": "string"}
+ ]
+}
+.------------.
+| goProducts |
+'------------'
+{
+ "namespace": "nifi",
+ "name": "machine",
+ "type": "record",
+ "fields": [
+	{"name": "ProductNumber","type": "int"},
+	{"name": "ProductLine","type": "string"},
+	{"name": "ProductType","type": "string"},
+	{"name": "Product","type": "string"},
+	{"name": "ProductBrand","type": "string"},
+	{"name": "ProductColor","type": "string"},
+	{"name": "UnitCost","type": "float"},
+	{"name": "UnitPrice","type": "float"}
+ ]
+}
+.-------------.
+| goRetailers |
+'-------------'
+{
+ "namespace": "nifi",
+ "name": "machine",
+ "type": "record",
+ "fields": [
+	{"name": "RetailerCode","type": "int"},
+	{"name": "RetailerName","type": "string"},
+	{"name": "Type","type": "string"},
+	{"name": "Country","type": "string"}
+ ]
+}
+.--------------.
+| goDailySales |
+'--------------'
+{
+ "namespace": "nifi",
+ "name": "machine",
+ "type": "record",
+ "fields": [
+	{"name": "RetailerCode","type": "int"},
+	{"name": "ProductNumber","type": "int"},
+	{"name": "OrderMethodCode","type": "int"},
+	{"name": "Date","type": "string"},
+	{"name": "Quantity","type": "int"},
+	{"name": "UnitPrice","type": "float"},
+	{"name": "UnitSalePrice","type": "float"}
+ ]
+}
+.--------------------.
+| consumerComplaints |
+'--------------------'
+{
+ "namespace": "nifi",
+ "name": "machine",
+ "type": "record",
+ "fields": [
+	{"name": "ComplaintIndex","type": "int"},
+	{"name": "Complaint","type": "int"},
+	{"name": "Product","type": "string"},
+	{"name": "SubProduct","type": ["null","string"]},
+	{"name": "Issue","type": ["null","string"]},
+	{"name": "SubIssue","type": ["null","string"]},
+	{"name": "State","type": ["null","string"]},
+	{"name": "ZIPCode","type": ["null","float"]},
+	{"name": "DateRecieved","type": {"type":"int","logicalType":"date"}},
+	{"name": "DateSentToCompany","type": {"type":"int","logicalType":"date"}},
+	{"name": "Company","type": ["null","string"]},
+	{"name": "CompanyResponse","type": ["null","string"]},
+	{"name": "TimelyResponse","type": ["null","string"]},
+	{"name": "ConsumerDisputed","type": ["null","string"]}
+ ]
+}
